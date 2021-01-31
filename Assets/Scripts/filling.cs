@@ -22,15 +22,12 @@ public class filling : MonoBehaviour
     void Start()
     {
         originalscale = this.transform.localScale;
-       
-
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        
+
     }
     public void startfilling()
     {
@@ -55,7 +52,6 @@ public class filling : MonoBehaviour
                 fillbuettebut.SetActive(false);
                 fillpipettebut.SetActive(true);
                 beaker.SetActive(false);
-
             }
         }
         yield  return null;

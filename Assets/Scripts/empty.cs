@@ -8,19 +8,6 @@ public class empty : MonoBehaviour
     public GameObject old;
     public GameObject newc;
     public GameObject acid;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void resetexp()
     {
         old.SetActive(false);

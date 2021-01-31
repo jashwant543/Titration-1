@@ -9,7 +9,7 @@ public class Lerp : MonoBehaviour
     public GameObject two;
     private Vector3 startpos;
     private Vector3 endpos;
-    private float dsitance = 15f;
+    //private float dsitance = 15f;
     private float lerptime = 5;
     private float currentlerptime=0;
 
