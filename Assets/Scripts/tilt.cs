@@ -16,7 +16,7 @@ public class tilt : MonoBehaviour
     public GameObject particles;
     public GameObject particles2;
     public GameObject particles3;
-    // public Collider boxka;
+    //public Collider boxka;
     //public Collider funnelka;
     public GameObject button;
     public GameObject button2;
@@ -40,41 +40,90 @@ public class tilt : MonoBehaviour
     void Update()
     {
         
-        if(timedelay > 0)
-        {
-            timedelay -= Time.deltaTime ;
-        }
-        else if(cylinder.transform.localScale.y > 0.38f)
-        {
-            particles.SetActive(false);
-            beaker.SetActive(false);
-            button.SetActive(false);
-            pipettbutton.SetActive(true);
-        }
-        if(cylinder2.transform.localPosition.y > -0.283 )
-        {
-            pipette.SetActive(false);
-            pipettecylinder.SetActive(false);
-            tube.SetActive(false);
-            particles2.SetActive(false);
-            particles3.SetActive(false);
-            button2.SetActive(false);
-            startbutton.SetActive(true);
-            stopbutton.SetActive(true);
-            reset.SetActive(true);
+//        if(timedelay > 0)
+//        {
+//            timedelay -= Time.deltaTime ;
+//        }
+//        else if(cylinder.transform.localScale.y > 0.38f)
+//        {
+//            particles.SetActive(false);
+//            beaker.SetActive(false);
+//            button.SetActive(false);
+//            pipettbutton.SetActive(true);
+//        }
+//        if(cylinder2.transform.localPosition.y > -0.283 )
+//        {
+//            Debug.Log("isrunning");
+//            pipette.SetActive(false);
+//            pipettecylinder.SetActive(false);
+//            tube.SetActive(false);
+//            particles2.SetActive(false);
+//            particles3.SetActive(false);
+//            button2.SetActive(false);
+//            startbutton.SetActive(true);
+//            stopbutton.SetActive(true);
+//            reset.SetActive(true);
             
 
-}
-        if(pipettecylinder.transform.localScale.y > 0.042f)
-        {
-            beaker2.SetActive(false);
-            pipettbutton.SetActive(false);
-            
-
-        }
+//}
+//        if(pipettecylinder.transform.localScale.y > 0.042f)
+//        {
+//            beaker2.SetActive(false);
+//            pipettbutton.SetActive(false);
+//        }
         
     }
-   
+
+    public void FillPipette()
+    {
+        StartCoroutine(PipetteFilling());
+    }
+    
+    private IEnumerator PipetteFilling()
+    {
+        while (true)
+        {
+            if (timedelay > 0)
+            {
+                timedelay -= Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+            else if (cylinder.transform.localScale.y > 0.38f)
+            {
+                particles.SetActive(false);
+                beaker.SetActive(false);
+                button.SetActive(false);
+                pipettbutton.SetActive(true);
+                yield return new WaitForEndOfFrame();
+            }
+            if (cylinder2.transform.localPosition.y > -0.283)
+            {
+                Debug.Log("isrunning");
+                pipette.SetActive(false);
+                pipettecylinder.SetActive(false);
+                tube.SetActive(false);
+                particles2.SetActive(false);
+                particles3.SetActive(false);
+                button2.SetActive(false);
+                startbutton.SetActive(true);
+                stopbutton.SetActive(true);
+                reset.SetActive(true);
+                yield return new WaitForEndOfFrame();
+
+
+            }
+            if (pipettecylinder.transform.localScale.y > 0.042f)
+            {
+                beaker2.SetActive(false);
+                pipettbutton.SetActive(false);
+            }
+            else
+            {
+                break;
+            }
+        }
+        yield return null;
+    }
     public void tilting()
     {
         beaker.transform.localPosition = beaker1pos.transform.localPosition;
@@ -85,7 +134,7 @@ public class tilt : MonoBehaviour
             fscript.startfilling();
 
     }
-  public void fillflask()
+    public void fillflask()
     {
         
         tube.transform.localPosition = testubepos.transform.localPosition;

@@ -54,10 +54,8 @@ public class showpanel : MonoBehaviour
             startbutton.SetActive(true);
             self.SetActive(false);
             BPM.SetActive(false);
-
-
-
         }
+
         else
         {
             b1.SetActive(true);
@@ -84,6 +82,11 @@ public class showpanel : MonoBehaviour
 
 
         }
+    }
+
+    public void SetActivefunc(GameObject obj)
+    {
+        obj.SetActive(true);
     }
    
 }

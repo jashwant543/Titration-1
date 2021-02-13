@@ -15,9 +15,6 @@ public class filling : MonoBehaviour
     public GameObject fillpipettebut;
     public GameObject particles;
     public GameObject beaker;
-   
-
-
 
     void Start()
     {
@@ -58,6 +55,7 @@ public class filling : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Burette Full");
         if(other.gameObject.name == "0mlTrigger")
         {
             isfull = true;
