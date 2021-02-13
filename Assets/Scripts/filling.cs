@@ -32,6 +32,7 @@ public class filling : MonoBehaviour
     }
     public IEnumerator fillliquid()
     {
+
         while (true)
         {
             if (!isfull)
@@ -41,6 +42,7 @@ public class filling : MonoBehaviour
             }
             else
             {
+                colorchanged = false;
                 break;
             }
             if(this.transform.localScale.y > 0.838f)
@@ -59,6 +61,14 @@ public class filling : MonoBehaviour
         if(other.gameObject.name == "0mlTrigger")
         {
             isfull = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Burette Full");
+        if(other.gameObject.name == "0mlTrigger")
+        {
+            isfull = false;
         }
     }
     public void emptyburette(bool status)

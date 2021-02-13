@@ -22,10 +22,7 @@ public class startstop : MonoBehaviour
     }
     public void process()
     {
-        
-            particles.SetActive(true);
-            
-       
+         particles.SetActive(true);    
     }
         
    
