@@ -15,6 +15,7 @@ public class filling : MonoBehaviour
     public GameObject fillpipettebut;
     public GameObject particles;
     public GameObject beaker;
+    private float ColorChangeTime;
 
     void Start()
     {
@@ -78,13 +79,17 @@ public class filling : MonoBehaviour
     }
     public IEnumerator emptyliquid()
     {
+        ColorChangeTime = 0;
         while (true)
         {
             if (isemptying && this.transform.localScale.y > originalscale.y)
             {
 
                 transform.localScale -= new Vector3(0, speed, 0) * Time.deltaTime;
-                if (this.transform.localScale.y < 0.657054f && !colorchanged)
+
+                ColorChangeTime += Time.deltaTime;
+
+                if (/*this.transform.localScale.y < 0.657054f*/ ColorChangeTime > 3 && !colorchanged)
                 {
                     changeacidcolor();
                 }
@@ -93,6 +98,8 @@ public class filling : MonoBehaviour
             }
             else if(!isemptying || this.transform.localScale.y < originalscale.y)
             {
+                colorchanged = false;
+                ColorChangeTime = 0;
                 break;
             }
 
