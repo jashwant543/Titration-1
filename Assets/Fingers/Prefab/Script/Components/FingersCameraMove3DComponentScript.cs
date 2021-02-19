@@ -82,8 +82,8 @@ namespace DigitalRubyShared
             {
                 Quaternion q = Target.rotation;
                 q = Quaternion.Euler(0.0f, q.eulerAngles.y, 0.0f);
-                moveVelocity += (q * Vector3.right * DeviceInfo.PixelsToUnits(gesture.DeltaX) * Time.deltaTime * PanSpeed * 500.0f);
-                moveVelocity += (q * Vector3.forward * DeviceInfo.PixelsToUnits(gesture.DeltaY) * Time.deltaTime * PanSpeed * 500.0f);
+                moveVelocity += (q * Vector3.right * DeviceInfo.PixelsToUnits(gesture.DeltaX) * Time.deltaTime * PanSpeed /** 500.0f*/);
+                moveVelocity += (q * Vector3.forward * DeviceInfo.PixelsToUnits(gesture.DeltaY) * Time.deltaTime * PanSpeed /** 500.0f*/);
             }
         }
 
@@ -100,7 +100,7 @@ namespace DigitalRubyShared
             if (gesture.State == GestureRecognizerState.Executing)
             {
                 float zoomSpeed = ScaleGesture.ScaleMultiplierRange;
-                zoomVelocity += (Target.forward * zoomSpeed * Time.deltaTime * ZoomSpeed * 100.0f);
+                zoomVelocity += (Target.forward * zoomSpeed * Time.deltaTime * ZoomSpeed /** 100.0f*/);
             }
         }
 
