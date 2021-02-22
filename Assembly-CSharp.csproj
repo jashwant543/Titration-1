@@ -177,6 +177,7 @@
     <Compile Include="Assets\Fingers\Demo\Scripts\DemoScriptPlaceObjects.cs" />
     <Compile Include="Assets\Scripts\Lerp.cs" />
     <Compile Include="Assets\Fingers\Prefab\Script\Gestures\OneTouchScaleGestureRecognizer.cs" />
+    <Compile Include="Assets\Scripts\ARTapToPlace.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Fingers\Demo\ExampleProjects\Resources\FingersExampleTransitionShader.shader" />

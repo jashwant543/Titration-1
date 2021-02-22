@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3651117672495793515, guid: 53a0ec653e3c46b46a8dbe2ec250a600, type: 3}
+      propertyPath: m_Horizontal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3651117673019900985, guid: 53a0ec653e3c46b46a8dbe2ec250a600, type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 0
