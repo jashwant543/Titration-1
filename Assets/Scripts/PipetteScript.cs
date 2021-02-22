@@ -6,6 +6,7 @@ public class PipetteScript : MonoBehaviour
 {
     //public GameObject Pipette;
     public GameObject PipetteCyl;
+    public GameObject AddtoFlask;
     private Vector3 InitialScale;
     private bool isFull = false;
     private float Speed = 0.01f;
@@ -44,6 +45,7 @@ public class PipetteScript : MonoBehaviour
         {
             Debug.Log("PipetteFull");
             isFull = true;
+            AddtoFlask.SetActive(true);
         }
     }
 }

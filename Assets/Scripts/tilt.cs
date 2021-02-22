@@ -126,12 +126,13 @@ public class tilt : MonoBehaviour
     }
     public void tilting()
     {
+        this.gameObject.SetActive(false);
         beaker.transform.localPosition = beaker1pos.transform.localPosition;
             
-            beaker.transform.Rotate(0.0f, 0.0f, -60.0f, Space.Self);
+        beaker.transform.Rotate(0.0f, 0.0f, -60.0f, Space.Self);
            
-            particles.SetActive(true);
-            fscript.startfilling();
+        particles.SetActive(true);
+        fscript.startfilling();
 
     }
     public void fillflask()
@@ -147,13 +148,15 @@ public class tilt : MonoBehaviour
         particles2.SetActive(true);
         particles3.SetActive(true);
         pipettecylinder.SetActive(false);
+        this.gameObject.SetActive(false);
         
     }
     public void fillpipette()
     {
+        this.gameObject.SetActive(false);
         beaker2.transform.localPosition = beaker2pos.transform.localPosition;
         pipettecylinder.SetActive(true);
-        button2.SetActive(true);
+        //button2.SetActive(true);
     }
 
 }
