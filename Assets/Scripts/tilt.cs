@@ -28,51 +28,7 @@ public class tilt : MonoBehaviour
     private float timedelay = 6;
     public filling fscript;
     public GameObject reset;
-  
-    // Start is called before the first frame update
-    void Start()
-    {
-       // boxka = FindObjectOfType<GameObject>().GetComponent<Collider>();
-        //funnelka = FindObjectOfType<GameObject>().GetComponent<Collider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-//        if(timedelay > 0)
-//        {
-//            timedelay -= Time.deltaTime ;
-//        }
-//        else if(cylinder.transform.localScale.y > 0.38f)
-//        {
-//            particles.SetActive(false);
-//            beaker.SetActive(false);
-//            button.SetActive(false);
-//            pipettbutton.SetActive(true);
-//        }
-//        if(cylinder2.transform.localPosition.y > -0.283 )
-//        {
-//            Debug.Log("isrunning");
-//            pipette.SetActive(false);
-//            pipettecylinder.SetActive(false);
-//            tube.SetActive(false);
-//            particles2.SetActive(false);
-//            particles3.SetActive(false);
-//            button2.SetActive(false);
-//            startbutton.SetActive(true);
-//            stopbutton.SetActive(true);
-//            reset.SetActive(true);
-            
-
-//}
-//        if(pipettecylinder.transform.localScale.y > 0.042f)
-//        {
-//            beaker2.SetActive(false);
-//            pipettbutton.SetActive(false);
-//        }
-        
-    }
+    private int count = 0;
 
     public void FillPipette()
     {
@@ -94,6 +50,7 @@ public class tilt : MonoBehaviour
                 beaker.SetActive(false);
                 button.SetActive(false);
                 pipettbutton.SetActive(true);
+
                 yield return new WaitForEndOfFrame();
             }
             if (cylinder2.transform.localPosition.y > -0.283)
@@ -157,6 +114,7 @@ public class tilt : MonoBehaviour
         beaker2.transform.localPosition = beaker2pos.transform.localPosition;
         pipettecylinder.SetActive(true);
         //button2.SetActive(true);
+        
     }
 
 }

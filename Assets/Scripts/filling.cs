@@ -16,6 +16,9 @@ public class filling : MonoBehaviour
     public GameObject particles;
     public GameObject beaker;
     private float ColorChangeTime;
+    private double scaleFactor = 0.0278709;
+    private double finalScale;
+    private int count = 0;
 
     void Start()
     {
@@ -50,7 +53,11 @@ public class filling : MonoBehaviour
             {
                 particles.SetActive(false);
                 fillbuettebut.SetActive(false);
-                fillpipettebut.SetActive(true);
+                if (count < 2)
+                {
+                    fillpipettebut.SetActive(true);
+                    count++;
+                }
                 beaker.SetActive(false);
             }
         }
@@ -74,6 +81,7 @@ public class filling : MonoBehaviour
     }
     public void emptyburette(bool status)
     {
+        finalScale = this.transform.localScale.y;
         isemptying = status;
         StartCoroutine(emptyliquid());
     }
@@ -89,7 +97,7 @@ public class filling : MonoBehaviour
 
                 ColorChangeTime += Time.deltaTime;
 
-                if (/*this.transform.localScale.y < 0.657054f*/ ColorChangeTime > 3 && !colorchanged)
+                if (/*this.transform.localScale.y < 0.657054f ColorChangeTime > 3*/(this.transform.localScale.y < finalScale-scaleFactor*10) && !colorchanged)
                 {
                     changeacidcolor();
                 }

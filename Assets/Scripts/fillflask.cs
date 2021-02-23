@@ -77,8 +77,7 @@ public class fillflask : MonoBehaviour
 
     public void ResetAcid()
     {
-        transform.localScale += new Vector3(0, 0, speed) * Time.deltaTime;
-        
+        transform.localScale += new Vector3(0, 0, speed) * Time.deltaTime;        
     }
 
 }
