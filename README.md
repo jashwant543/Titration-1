@@ -3,3 +3,8 @@ Titration is a common laboratory method of quantitative chemical analysis to det
 
 ## Application Preview
 
+<p align="center">
+  <img src="./Application_gif/Practical.gif" alt="Part 1">
+   <img src="./Application_gif/Practical2.gif" alt="Part 2">
+  
+</p>
